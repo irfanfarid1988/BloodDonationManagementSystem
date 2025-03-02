@@ -1,0 +1,34 @@
+@page
+@model CreateModel
+@{
+    ViewData["Title"] = "Add Blood Inventory";
+}
+
+<h2>Add Blood Inventory</h2>
+
+<form method="post">
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label asp-for="BloodInventory.BloodType"></label>
+        <input asp-for="BloodInventory.BloodType" class="form-control" />
+        <span asp-validation-for="BloodInventory.BloodType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BloodInventory.Quantity"></label>
+        <input asp-for="BloodInventory.Quantity" class="form-control" />
+        <span asp-validation-for="BloodInventory.Quantity" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BloodInventory.ExpirationDate"></label>
+        <input asp-for="BloodInventory.ExpirationDate" class="form-control" />
+        <span asp-validation-for="BloodInventory.ExpirationDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BloodInventory.DonorID"></label>
+        <select asp-for="BloodInventory.DonorID" asp-items="Model.Donors" class="form-control">
+            <option value="">-- Select Donor --</option>
+        </select>
+        <span asp-validation-for="BloodInventory.DonorID" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>

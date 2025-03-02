@@ -1,0 +1,41 @@
+@page
+@model EditModel
+@{
+    ViewData["Title"] = "Edit Communication";
+}
+
+<h2>Edit Communication</h2>
+
+<form method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="DonorCommunication.CommunicationID" />
+    <div class="form-group">
+        <label asp-for="DonorCommunication.DonorID"></label>
+        <select asp-for="DonorCommunication.DonorID" asp-items="Model.Donors" class="form-control"></select>
+        <span asp-validation-for="DonorCommunication.DonorID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DonorCommunication.MessageType"></label>
+        <select asp-for="DonorCommunication.MessageType" class="form-control">
+            <option value="Email">Email</option>
+            <option value="SMS">SMS</option>
+            <option value="Call">Call</option>
+        </select>
+        <span asp-validation-for="DonorCommunication.MessageType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DonorCommunication.Message"></label>
+        <textarea asp-for="DonorCommunication.Message" class="form-control"></textarea>
+        <span asp-validation-for="DonorCommunication.Message" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DonorCommunication.Status"></label>
+        <select asp-for="DonorCommunication.Status" class="form-control">
+            <option value="Sent">Sent</option>
+            <option value="Delivered">Delivered</option>
+            <option value="Failed">Failed</option>
+        </select>
+        <span asp-validation-for="DonorCommunication.Status" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

@@ -1,0 +1,38 @@
+@page
+@model EditModel
+@{
+    ViewData["Title"] = "Edit Donor";
+}
+
+<h2>Edit Donor</h2>
+
+<form method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Donor.DonorID" />
+    <div class="form-group">
+        <label asp-for="Donor.FirstName"></label>
+        <input asp-for="Donor.FirstName" class="form-control" />
+        <span asp-validation-for="Donor.FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Donor.LastName"></label>
+        <input asp-for="Donor.LastName" class="form-control" />
+        <span asp-validation-for="Donor.LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Donor.BloodType"></label>
+        <input asp-for="Donor.BloodType" class="form-control" />
+        <span asp-validation-for="Donor.BloodType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Donor.Email"></label>
+        <input asp-for="Donor.Email" class="form-control" />
+        <span asp-validation-for="Donor.Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Donor.ContactNumber"></label>
+        <input asp-for="Donor.ContactNumber" class="form-control" />
+        <span asp-validation-for="Donor.ContactNumber" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

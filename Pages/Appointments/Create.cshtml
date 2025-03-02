@@ -1,0 +1,32 @@
+@page
+@model CreateModel
+@{
+    ViewData["Title"] = "Schedule Appointment";
+}
+
+<h2>Schedule Appointment</h2>
+
+<form method="post">
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label asp-for="Appointment.DonorID"></label>
+        <select asp-for="Appointment.DonorID" asp-items="Model.Donors" class="form-control"></select>
+        <span asp-validation-for="Appointment.DonorID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Appointment.AppointmentDate"></label>
+        <input asp-for="Appointment.AppointmentDate" class="form-control" />
+        <span asp-validation-for="Appointment.AppointmentDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Appointment.AppointmentTime"></label>
+        <input asp-for="Appointment.AppointmentTime" class="form-control" />
+        <span asp-validation-for="Appointment.AppointmentTime" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Appointment.Notes"></label>
+        <textarea asp-for="Appointment.Notes" class="form-control"></textarea>
+        <span asp-validation-for="Appointment.Notes" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Schedule</button>
+</form>

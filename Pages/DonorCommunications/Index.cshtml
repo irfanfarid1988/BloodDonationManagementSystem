@@ -1,0 +1,38 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Communications";
+}
+
+<h2>Communications</h2>
+@Html.AntiForgeryToken()
+<table class="table">
+    <thead>
+        <tr>
+            <th>Donor</th>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Message</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var communication in Model.DonorCommunications)
+        {
+            <tr>
+                <td>@communication.Donor.FirstName @communication.Donor.LastName</td>
+                <td>@communication.CommunicationDate.ToShortDateString()</td>
+                <td>@communication.MessageType</td>
+                <td>@communication.Message</td>
+                <td>@communication.Status</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@communication.CommunicationID">Edit</a> |
+                    <a asp-page="./Delete" asp-route-id="@communication.CommunicationID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-page="./Create" class="btn btn-primary">Send New Communication</a>

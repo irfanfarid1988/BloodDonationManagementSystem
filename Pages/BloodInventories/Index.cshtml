@@ -1,0 +1,36 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Blood Inventory";
+}
+
+<h2>Blood Inventory</h2>
+@Html.AntiForgeryToken()
+<table class="table">
+    <thead>
+        <tr>
+            <th>Blood Type</th>
+            <th>Quantity</th>
+            <th>Expiration Date</th>
+            <th>Donor</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var inventory in Model.BloodInventories)
+        {
+            <tr>
+                <td>@inventory.BloodType</td>
+                <td>@inventory.Quantity</td>
+                <td>@inventory.ExpirationDate.ToShortDateString()</td>
+                <td>@(inventory.Donor?.FullName ?? "N/A")</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@inventory.InventoryID">Edit</a> |
+                    <a asp-page="./Delete" asp-route-id="@inventory.InventoryID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-page="./Create" class="btn btn-primary">Add New Inventory</a>
