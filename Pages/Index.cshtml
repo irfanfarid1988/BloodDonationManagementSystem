@@ -1,10 +1,175 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="hero-section text-center py-5 bg-light">
+    <div class="container">
+        <h1 class="text-white">Blood Donation Management System</h1>
+        <p class="text-white">Manage blood donation efficiently with our system</p>
+        <p class="text-white">Our system helps in tracking donations, managing donor profiles, and ensuring smooth operations in medical facilities.</p>
+        <a href="#" class="btn btn-primary">Call to Donate</a>
+        <a href="#" class="btn btn-warning">Learn More</a>
+    </div>
+</section>
+
+<section class="stats-section text-center py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card bg-danger bg-gradient text-white">
+                    <div class="card-body">
+                        <h2>10+ Donations Today</h2>
+                        <p>Join our community of donors and save lives.</p>
+                        <br>
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card bg-primary bg-gradient text-light">
+                    <div class="card-body">
+                        <h2>Available Blood</h2>
+                        <ul class="list-unstyled">
+                            <li>A+: 10 units</li>
+                            <li>B+: 8 units</li>
+                            <li>O+: 15 units</li>
+                            <li>AB+: 5 units</li>
+                            <!-- add more blood types as needed -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card bg-secondary bg-gradient text-light">
+                    <div class="card-body">
+                        <h2>50+ Donors</h2>
+                        <p>Our platform has a growing list of generous donors.</p>
+                        <br<br><br>
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="profile-section text-center py-5">
+    <div class="container">
+        <h2>Donor Profiles</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card card-profile">
+                    <img src="~/img/donor/01.jpg" alt="Donor" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">John Doe</h5>
+                        <p class="card-text">Blood Type: A+</p>
+                        <p class="card-text">Last Donation Date: 2025-03-01</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card card-profile">
+                    <img src="~/img/donor/05.jpg" alt="Donor" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Jane Smith</h5>
+                        <p class="card-text">Blood Type: O+</p>
+                        <p class="card-text">Last Donation Date: 2025-02-25</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card card-profile">
+                    <img src="~/img/donor/05.jpg" alt="Donor" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Jane Smith</h5>
+                        <p class="card-text">Blood Type: O+</p>
+                        <p class="card-text">Last Donation Date: 2025-02-25</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more donor profiles as needed -->
+        </div>
+    </div>
+</section>
+
+<section class="requests-section text-center py-5 bg-light">
+    <div class="container">
+        <h2>Total Requests Received</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Request 1</h5>
+                        <p class="card-text">Blood Type: B+</p>
+                        <p class="card-text">Date Requested: 2025-03-05</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Request 1</h5>
+                        <p class="card-text">Blood Type: B+</p>
+                        <p class="card-text">Date Requested: 2025-03-05</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Request 2</h5>
+                        <p class="card-text">Blood Type: O-</p>
+                        <p class="card-text">Date Requested: 2025-03-04</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more request cards as needed -->
+        </div>
+    </div>
+</section>
+
+<section class="feedback-section text-center py-5">
+    <div class="container">
+        <h2>Requester Feedback</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">John Doe</h5>
+                        <p class="card-text">"Great service! Quick and efficient response."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Jane Smith</h5>
+                        <p class="card-text">"I appreciate the timely help. Excellent platform."</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more feedback cards as needed -->
+        </div>
+    </div>
+</section>
+<section class="about-section text-center py-5" style="background: bisque;">
+    <div class="container">
+        <h2>About Us</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="stat">3 Units Collected Today</div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat">2375 Total Donations</div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat">150 Active Donors</div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat">50 Medical Facilities</div>
+            </div>
+        </div>
+    </div>
+</section>
