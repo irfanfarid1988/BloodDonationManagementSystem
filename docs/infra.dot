@@ -1,0 +1,17 @@
+digraph INFRA {
+  node [ color = "black", fillcolor = "#E6E6E6", height =1, style = "filled,bold,rounded", fontname = "Arial" ];
+  "AppDbContext" [ label = "AppDbContext
+(AWS::RDS::DBInstance)", shape =cylinder, fillcolor = "#FFCFB3" ];
+  "IdentityService" [ label = "IdentityService
+(AWS::Cognito::UserPool)", shape =rectangle ];
+  "LoggingService" [ label = "LoggingService
+(AWS::CloudWatch::LogGroup)", shape =rectangle ];
+  "ApplicationInsights" [ label = "ApplicationInsights
+(AWS::ApplicationInsights::Application)", shape =rectangle ];
+  "WebApplication" [ label = "WebApplication
+(AWS::ElasticBeanstalk::Application)", shape =rectangle, fillcolor = "#B7E0FF" ];
+  "WebApplication" -> "AppDbContext";
+  "WebApplication" -> "IdentityService";
+  "WebApplication" -> "LoggingService";
+  "WebApplication" -> "ApplicationInsights";
+}
