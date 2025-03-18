@@ -1,0 +1,69 @@
+@page
+@model BloodDonationManagementSystem.Pages.BloodRequests.EditModel
+@{
+    ViewData["Title"] = "Edit Blood Request";
+}
+
+<h1>Edit Blood Request</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BloodRequest.Id" />
+            <div class="form-group">
+                <label asp-for="BloodRequest.PatientName" class="control-label"></label>
+                <input asp-for="BloodRequest.PatientName" class="form-control" />
+                <span asp-validation-for="BloodRequest.PatientName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BloodRequest.BloodType" class="control-label"></label>
+                <select asp-for="BloodRequest.BloodType" class="form-control">
+                    <option value="">Select Blood Type</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+                <span asp-validation-for="BloodRequest.BloodType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BloodRequest.UnitsNeeded" class="control-label"></label>
+                <input asp-for="BloodRequest.UnitsNeeded" class="form-control" />
+                <span asp-validation-for="BloodRequest.UnitsNeeded" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BloodRequest.UrgencyLevel" class="control-label"></label>
+                <select asp-for="BloodRequest.UrgencyLevel" class="form-control">
+                    <option value="">Select Urgency Level</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                    <option value="Critical">Critical</option>
+                </select>
+                <span asp-validation-for="BloodRequest.UrgencyLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BloodRequest.RequestDate" class="control-label"></label>
+                <input asp-for="BloodRequest.RequestDate" class="form-control" />
+                <span asp-validation-for="BloodRequest.RequestDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

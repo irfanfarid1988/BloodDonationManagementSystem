@@ -1,0 +1,40 @@
+@page
+@model BloodDonationManagementSystem.Pages.BloodRequests.IndexModel
+@{
+    ViewData["Title"] = "Blood Requests";
+}
+
+<h1>Blood Requests</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.BloodRequests[0].PatientName)</th>
+            <th>@Html.DisplayNameFor(model => model.BloodRequests[0].BloodType)</th>
+            <th>@Html.DisplayNameFor(model => model.BloodRequests[0].UnitsNeeded)</th>
+            <th>@Html.DisplayNameFor(model => model.BloodRequests[0].UrgencyLevel)</th>
+            <th>@Html.DisplayNameFor(model => model.BloodRequests[0].RequestDate)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.BloodRequests)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.PatientName)</td>
+                <td>@Html.DisplayFor(modelItem => item.BloodType)</td>
+                <td>@Html.DisplayFor(modelItem => item.UnitsNeeded)</td>
+                <td>@Html.DisplayFor(modelItem => item.UrgencyLevel)</td>
+                <td>@Html.DisplayFor(modelItem => item.RequestDate)</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                    <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
