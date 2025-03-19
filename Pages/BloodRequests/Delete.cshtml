@@ -1,5 +1,5 @@
 @page
-@model BloodDonationManagementSystem.Pages.BloodRequests.DeleteModel
+@model DeleteModel
 @{
     ViewData["Title"] = "Delete Blood Request";
 }
@@ -17,10 +17,10 @@
             @Html.DisplayFor(model => model.BloodRequest.PatientName)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.BloodRequest.BloodType)
+            @Html.DisplayNameFor(model => model.BloodRequest.BloodGroup)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.BloodRequest.BloodType)
+            @Html.DisplayFor(model => model.BloodRequest.BloodGroup)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.BloodRequest.UnitsNeeded)

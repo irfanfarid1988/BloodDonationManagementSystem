@@ -10,9 +10,9 @@
     @Html.AntiForgeryToken()
     <input type="hidden" asp-for="BloodInventory.InventoryID" />
     <div class="form-group">
-        <label asp-for="BloodInventory.BloodType"></label>
-        <input asp-for="BloodInventory.BloodType" class="form-control" />
-        <span asp-validation-for="BloodInventory.BloodType" class="text-danger"></span>
+        <label asp-for="BloodInventory.BloodGroup"></label>
+        <input asp-for="BloodInventory.BloodGroup" class="form-control" />
+        <span asp-validation-for="BloodInventory.BloodGroup" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="BloodInventory.Quantity"></label>

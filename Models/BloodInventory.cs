@@ -8,7 +8,7 @@ public class BloodInventory
 
     [Required]
     [StringLength(5)]
-    public string BloodType { get; set; }
+    public string BloodGroup { get; set; }
 
     [Required]
     public int Quantity { get; set; }

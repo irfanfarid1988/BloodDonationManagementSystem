@@ -1,5 +1,5 @@
 @page
-@model BloodDonationManagementSystem.Pages.BloodRequests.IndexModel
+@model IndexModel
 @{
     ViewData["Title"] = "Blood Requests";
 }
@@ -13,7 +13,7 @@
     <thead>
         <tr>
             <th>@Html.DisplayNameFor(model => model.BloodRequests[0].PatientName)</th>
-            <th>@Html.DisplayNameFor(model => model.BloodRequests[0].BloodType)</th>
+            <th>@Html.DisplayNameFor(model => model.BloodRequests[0].BloodGroup)</th>
             <th>@Html.DisplayNameFor(model => model.BloodRequests[0].UnitsNeeded)</th>
             <th>@Html.DisplayNameFor(model => model.BloodRequests[0].UrgencyLevel)</th>
             <th>@Html.DisplayNameFor(model => model.BloodRequests[0].RequestDate)</th>
@@ -25,7 +25,7 @@
         {
             <tr>
                 <td>@Html.DisplayFor(modelItem => item.PatientName)</td>
-                <td>@Html.DisplayFor(modelItem => item.BloodType)</td>
+                <td>@Html.DisplayFor(modelItem => item.BloodGroup)</td>
                 <td>@Html.DisplayFor(modelItem => item.UnitsNeeded)</td>
                 <td>@Html.DisplayFor(modelItem => item.UrgencyLevel)</td>
                 <td>@Html.DisplayFor(modelItem => item.RequestDate)</td>

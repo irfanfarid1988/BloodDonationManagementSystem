@@ -1,10 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using BloodDonationManagementSystem.Models;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using BloodDonationManagementSystem.Data;
+using BloodDonationManagementSystem.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BloodDonationManagementSystem.Pages.BloodRequests
 {

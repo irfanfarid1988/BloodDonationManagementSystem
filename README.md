@@ -79,7 +79,7 @@ var donor = new Donor
 {
     FirstName = "John",
     LastName = "Doe",
-    BloodType = "A+",
+    BloodGroup = "A+",
     Email = "john.doe@example.com",
     ContactNumber = "1234567890"
 };

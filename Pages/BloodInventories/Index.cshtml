@@ -20,7 +20,7 @@
         @foreach (var inventory in Model.BloodInventories)
         {
             <tr>
-                <td>@inventory.BloodType</td>
+                <td>@inventory.BloodGroup</td>
                 <td>@inventory.Quantity</td>
                 <td>@inventory.ExpirationDate.ToShortDateString()</td>
                 <td>@(inventory.Donor?.FullName ?? "N/A")</td>

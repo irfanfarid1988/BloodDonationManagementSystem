@@ -1,5 +1,5 @@
 @page
-@model BloodDonationManagementSystem.Pages.BloodRequests.EditModel
+@model EditModel
 @{
     ViewData["Title"] = "Edit Blood Request";
 }
@@ -18,8 +18,8 @@
                 <span asp-validation-for="BloodRequest.PatientName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="BloodRequest.BloodType" class="control-label"></label>
-                <select asp-for="BloodRequest.BloodType" class="form-control">
+                <label asp-for="BloodRequest.BloodGroup" class="control-label"></label>
+                <select asp-for="BloodRequest.BloodGroup" class="form-control">
                     <option value="">Select Blood Type</option>
                     <option value="A+">A+</option>
                     <option value="A-">A-</option>
@@ -30,7 +30,7 @@
                     <option value="O+">O+</option>
                     <option value="O-">O-</option>
                 </select>
-                <span asp-validation-for="BloodRequest.BloodType" class="text-danger"></span>
+                <span asp-validation-for="BloodRequest.BloodGroup" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="BloodRequest.UnitsNeeded" class="control-label"></label>

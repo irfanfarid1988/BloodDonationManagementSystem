@@ -18,7 +18,7 @@ public class Donor
 
     [Required]
     [RegularExpression(@"^(A|B|AB|O)[+-]$")]
-    public string BloodType { get; set; }
+    public string BloodGroup { get; set; }
 
     [Required]
     [EmailAddress]
