@@ -1,36 +1,46 @@
 @page
 @model IndexModel
+
 @{
     ViewData["Title"] = "Blood Inventory";
 }
 
-<h2>Blood Inventory</h2>
+<h1>Blood Inventory</h1>
 @Html.AntiForgeryToken()
-<table class="table">
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
+</p>
+<table id="inventoryTable" class="table">
     <thead>
         <tr>
-            <th>Blood Group</th>
+            <th>Blood Type</th>
             <th>Quantity</th>
-            <th>Expiration Date</th>
             <th>Donor</th>
+            <th>Expiry Date</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var inventory in Model.BloodInventories)
+        @foreach (Models.BloodInventory item in Model.BloodInventories)
         {
             <tr>
-                <td>@inventory.BloodGroup</td>
-                <td>@inventory.Quantity</td>
-                <td>@inventory.ExpirationDate.ToShortDateString()</td>
-                <td>@(inventory.Donor?.FullName ?? "N/A")</td>
+                <td>@item.BloodGroup</td>
+                <td>@item.Quantity</td>
+                <td>@item.Donor.FullName</td>
+                <td>@item.ExpirationDate.ToShortDateString()</td>
                 <td>
-                    <a asp-page="./Edit" asp-route-id="@inventory.InventoryID">Edit</a> |
-                    <a asp-page="./Delete" asp-route-id="@inventory.InventoryID">Delete</a>
+                    <a asp-page="./Edit" asp-route-id="@item.InventoryID" class="btn btn-info btn-sm">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@item.InventoryID" class="btn btn-danger btn-sm">Delete</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-<a asp-page="./Create" class="btn btn-primary">Add New Inventory</a>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            let table = new DataTable('#inventoryTable');
+        });
+    </script>
+}

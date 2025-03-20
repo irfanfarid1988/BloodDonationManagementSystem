@@ -1,16 +1,23 @@
 @page
 @model IndexModel
+
 @{
-    ViewData["Title"] = "Donors";
+    ViewData["Title"] = "Donors List";
 }
 
-<h2>Donors</h2>
+<h1>Donors</h1>
 @Html.AntiForgeryToken()
-<table class="table">
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
+</p>
+<table id="donorsTable" class="table">
     <thead>
         <tr>
             <th>Name</th>
-            <th>Blood Group</th>
+            <th>Blood Type</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Address</th>
             <th>Email</th>
             <th>Contact</th>
             <th>Actions</th>
@@ -20,17 +27,26 @@
         @foreach (var donor in Model.Donors)
         {
             <tr>
-                <td>@donor.FirstName @donor.LastName</td>
+                <td>@donor.FullName</td>
                 <td>@donor.BloodGroup</td>
+                <td>@donor.State</td>
+                <td>@donor.City</td>
+                <td>@donor.Address</td>
                 <td>@donor.Email</td>
                 <td>@donor.ContactNumber</td>
                 <td>
-                    <a asp-page="./Edit" asp-route-id="@donor.DonorID">Edit</a> |
-                    <a asp-page="./Delete" asp-route-id="@donor.DonorID">Delete</a>
+                    <a asp-page="./Edit" asp-route-id="@donor.DonorID" class="btn btn-info btn-sm">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@donor.DonorID" class="btn btn-danger btn-sm">Delete</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-<a asp-page="./Create" class="btn btn-primary">Register New Donor</a>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            let table = new DataTable('#donorsTable');
+        });
+    </script>
+}

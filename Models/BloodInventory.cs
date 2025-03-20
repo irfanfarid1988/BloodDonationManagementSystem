@@ -1,26 +1,29 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-public class BloodInventory
+namespace BloodDonationManagementSystem.Models
 {
-    [Key]
-    public int InventoryID { get; set; }
+    public class BloodInventory
+    {
+        [Key]
+        public int InventoryID { get; set; }
 
-    [Required]
-    [StringLength(5)]
-    public string BloodGroup { get; set; }
+        [Required]
+        [StringLength(5)]
+        public string BloodGroup { get; set; }
 
-    [Required]
-    public int Quantity { get; set; }
+        [Required]
+        public int Quantity { get; set; }
 
-    [Required]
-    [DataType(DataType.Date)]
-    public DateTime ExpirationDate { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime ExpirationDate { get; set; }
 
-    public int? DonorID { get; set; } // Optional, to track donor contribution
+        public int? DonorID { get; set; } // Optional, to track donor contribution
 
-    [DataType(DataType.DateTime)]
-    public DateTime AddedDate { get; set; } = DateTime.Now;
+        [DataType(DataType.DateTime)]
+        public DateTime AddedDate { get; set; } = DateTime.Now;
 
-    public Donor Donor { get; set; }
+        public Donor Donor { get; set; }
+    }
 }
