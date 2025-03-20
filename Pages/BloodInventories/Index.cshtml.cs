@@ -20,7 +20,7 @@ namespace BloodDonationManagementSystem.Pages.BloodInventories
 
         public async Task OnGetAsync()
         {
-            BloodInventories = await _context.BloodInventories
+            BloodInventories = await _context.BloodInventorys
                 .Include(b => b.Donor)
                 .ToListAsync();
         }

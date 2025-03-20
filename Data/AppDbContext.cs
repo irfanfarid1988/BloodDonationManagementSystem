@@ -9,7 +9,7 @@ namespace BloodDonationManagementSystem.Data
 
         public DbSet<Donor> Donors { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
-        public DbSet<BloodInventory> BloodInventories { get; set; }
+        public DbSet<BloodInventory> BloodInventorys { get; set; }
         public DbSet<DonorCommunication> DonorCommunications { get; set; }
         public DbSet<BloodRequest> BloodRequests { get; set; }
         public DbSet<User> Users { get; set; }

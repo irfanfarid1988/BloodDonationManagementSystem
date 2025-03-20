@@ -34,7 +34,7 @@ namespace BloodDonationManagementSystem.Pages.BloodInventories
                 return Page();
             }
 
-            _context.BloodInventories.Add(BloodInventory);
+            _context.BloodInventorys.Add(BloodInventory);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

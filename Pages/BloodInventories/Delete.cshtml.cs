@@ -21,7 +21,7 @@ namespace BloodDonationManagementSystem.Pages.BloodInventories
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
-            BloodInventory = await _context.BloodInventories
+            BloodInventory = await _context.BloodInventorys
                 .Include(b => b.Donor)
                 .FirstOrDefaultAsync(b => b.InventoryID == id);
 
@@ -35,11 +35,11 @@ namespace BloodDonationManagementSystem.Pages.BloodInventories
 
         public async Task<IActionResult> OnPostAsync(int id)
         {
-            BloodInventory = await _context.BloodInventories.FindAsync(id);
+            BloodInventory = await _context.BloodInventorys.FindAsync(id);
 
             if (BloodInventory != null)
             {
-                _context.BloodInventories.Remove(BloodInventory);
+                _context.BloodInventorys.Remove(BloodInventory);
                 await _context.SaveChangesAsync();
             }
 
